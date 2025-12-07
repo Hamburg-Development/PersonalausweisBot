@@ -180,7 +180,7 @@ python main.py
 
 ## 📞 Support & Kontakt
 
-Bei Fragen, Bugs oder Feature-Requests nutze den `/report`-Befehl im Bot oder öffne ein Issue auf GitHub.
+Bei Fragen, Bugs oder Feature-Requests nutze den `/report`-Befehl im Bot oder öffne ein Issue auf GitHub!
 
 ---
 

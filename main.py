@@ -648,14 +648,11 @@ async def create_perso(interaction: discord.Interaction):
     
     is_fake = type_view.selected_type == "fake"
     
-    # Custom Modal erstellen
     modal_title = "🚨 Gefälschte Ausweisdaten" if is_fake else "📄 Persönliche Daten"
     
     class AusweisModal(discord.ui.Modal):
         def __init__(self, title: str):
             super().__init__(title=title, timeout=300)
-            
-            warning_text = "⚠️ This form will be submitted to HAM Personalausweis. Do not share passwords or other sensitive information."
             
             self.vorname = discord.ui.TextInput(
                 label="Vorname & Nachname",
@@ -711,7 +708,6 @@ async def create_perso(interaction: discord.Interaction):
     
     modal = AusweisModal(title=modal_title)
     
-    # Button View für Modal-Öffnung
     class OpenModalButton(discord.ui.View):
         def __init__(self):
             super().__init__(timeout=60)
@@ -747,7 +743,6 @@ async def create_perso(interaction: discord.Interaction):
             status=Status.ausstehend.value,
         )
         
-        # Typ hinzufügen (falls Person-Klasse das unterstützt)
         if hasattr(perso, 'typ'):
             perso.typ = "G" if is_fake else "O"
 
